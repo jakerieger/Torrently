@@ -1,0 +1,6 @@
+[submodule "ThirdParty/FTXUI"]
+	path = ThirdParty/FTXUI
+	url = https://github.com/ArthurSonzogni/FTXUI
+[submodule "ThirdParty/Types"]
+	path = ThirdParty/Types
+	url = https://github.com/jakerieger/Types.git
