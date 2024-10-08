@@ -43,7 +43,7 @@ int main() {
     auto paletteComponent = Renderer(commandInput, [&] {
         return vbox({
           hbox(text(" > "), commandInput->Render()) | border,
-          text("! This is a status update."),
+          text("  ⓘ This is a status update.") | color(Color::Blue),
         });
     });
 

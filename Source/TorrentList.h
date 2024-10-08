@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ftxui/dom/elements.hpp>
 #define IO_ALIASES
 #define INC_VECTOR
 #include <Types/Types.h>
@@ -29,16 +30,28 @@ static ftxui::Component TorrentList() {
         Impl() {
             auto content = Renderer([=] {
                 const auto header = hbox({
-                  text("Name") | flex,
-                  text("Size") | flex,
+                  text("Name"),
+                  text("Size"),
                   text("Status") | flex,
-                  text("D/L") | flex,
-                  text("U/L") | flex,
-                  text("Elapsed") | flex,
+                  text("D/L"),
+                  text("U/L"),
+                  text("Elapsed"),
                 });
+
+                Vector<Element> torrents = {
+                  hbox({
+                    text("Adobe Photoshop 2024.1 [R2R]"),
+                    text("1.68 GB"),
+                    gauge(0.45) | flex,
+                    text("54 Mbps"),
+                    text("21 Mbps"),
+                    text("00:12:34"),
+                  }),
+                };
 
                 return vbox({
                   header,
+                  vbox(torrents),
                 });
             });
 
